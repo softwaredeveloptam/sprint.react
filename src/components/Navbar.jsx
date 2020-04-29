@@ -2,18 +2,19 @@ import React from "react";
 import Upload from "./Upload";
 import "../styles/navbar.css";
 import _ from "lodash";
-import App from "./App";
+// import App from "./App";
 
-export default function Navbar() {
-  function changeProp(prop) {}
+export default function Navbar(prop) {
+  // function changeProp(prop) {}
 
   return (
     <div className="navbar">
       <h1
         className="navbar-header"
-        // onClick={App.photoStateHandler}
+        //dont change this, it's working
+        onClick={prop.changeState}
       >
-        SCREAMING
+        Header
       </h1>
       <Upload />
     </div>

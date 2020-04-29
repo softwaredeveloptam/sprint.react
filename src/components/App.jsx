@@ -19,24 +19,48 @@ import SinglePhoto from "./SinglePhoto";
 //if singlephoto or anything else then just show singlephoto component mayhaps
 
 export default function App() {
-  let photoState = AllPhotos;
-
-  const photoStateHandler = () => {
-    if (photoState === AllPhotos) {
-      photoState = SinglePhoto;
-    } else {
-      photoState = AllPhotos;
-    }
-  };
+  // if it's singlePhotos then setCurrentView to allPhotos
+  // if it's allphotos, then setCurrentView to singlePhotos
+  const [currentView, setCurrentView] = useState(AllPhotos);
 
   function UpdatedState() {
-    const [currentView, setCurrentView] = useState(photoState);
+    // can use setCurrentView to just have a 1 way movement
     return <>{currentView}</>;
   }
 
+  // let photoState = AllPhotos;
+
+  let photoBoolean = true;
+
+  const photoStateHandler = () => {
+    console.log("HIIIIIIIII");
+    console.log(currentView);
+
+    if (photoBoolean === true) {
+      console.log("currentView is equal to SinglePhoto");
+      setCurrentView(SinglePhoto);
+      photoBoolean = false;
+    } else {
+      console.log("currentView is equal to AllPhotos");
+      setCurrentView(AllPhotos);
+      photoBoolean = true;
+    }
+  };
+
+  // currentview -toggles btw one and all photos
+  // photos - allphotos don't update we done
+  // selected photos - change w setcurrent view
+  // func that grabs all objs and manipulates to get data
+  // sets photos as array of data strings(img string)
+  // useEffect to call that array, [] fires once
+  // setsinglephoto and setview - jeff's toggle
+  // heck jeff heckkkkkkkk
+
   return (
     <div className="app">
-      <Navbar onClick="yourclickhandlerhere" />
+      {/* don't change, working! */}
+      {/*ok */}
+      <Navbar changeState={photoStateHandler} />
       <UpdatedState />
     </div>
   );
