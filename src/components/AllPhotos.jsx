@@ -1,8 +1,22 @@
 import React from "react";
 import _ from "lodash";
-import { listObjects, getSingleObject } from "../utils/index";
+import { listObjects, getSingleObject, saveObject } from "../utils/index";
 
-export default function AllPhotos() {
+export default function AllPhotos(props) {
+  const photoOutput = props.src.map(photo => {
+    return (
+      <img src={`data:image/jpg;base64, ${photo}`} className="allPhotos" />
+    );
+  });
+
+  return (
+    <>
+      <div className="allPhotos">{photoOutput}</div>
+    </>
+  );
+}
+
+/*
   async function list() {
     let photoKey = [];
     const photos = await listObjects();
@@ -18,12 +32,4 @@ export default function AllPhotos() {
   }
 
   list();
-
-  return (
-    <>
-      <div className="allPhotos">
-        <h1>greens</h1>
-      </div>
-    </>
-  );
-}
+*/
