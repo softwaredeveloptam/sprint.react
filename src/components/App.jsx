@@ -20,8 +20,6 @@ import { listObjects, getSingleObject, saveObject } from "../utils/index";
 // if singlephoto or anything else then just show singlephoto component mayhaps
 
 export default function App() {
-  // if it's singlePhotos then setCurrentView to allPhotos
-  // if it's allphotos, then setCurrentView to singlePhotos
   const [currentView, setCurrentView] = useState("AllPhotos");
   const [photos, setPhotos] = useState([]);
 
@@ -37,7 +35,7 @@ export default function App() {
   const photoStateHandler = () => {
     // console.log("HIIIIIIIII");
     // console.log(currentView);
-
+    // tam's a nerddddddddd
     if (photoBoolean === true) {
       // console.log("currentView is equal to SinglePhoto");
       setCurrentView(AllPhotos);
@@ -84,8 +82,8 @@ export default function App() {
       />
     </div>
   );
-
-  /*
+}
+/*
 
    const names = ['James', 'Paul', 'John', 'George', 'Ringo'];
 
@@ -139,21 +137,20 @@ export default function App() {
 
   */
 
-  /*
+/*
   onclick run function that changes the variable ??
 
   */
 
-  // }
-  // return (
-  //   <div className="app">
-  //     {/* don't change, working! */}
-  //     {/*ok */}
-  //     <Navbar changeState={photoStateHandler} />
-  //     <UpdatedState />
-  //   </div>
-  // );
-}
+// }
+// return (
+//   <div className="app">
+//     {/* don't change, working! */}
+//     {/*ok */}
+//     <Navbar changeState={photoStateHandler} />
+//     <UpdatedState />
+//   </div>
+// );
 
 /* <Testing image="https://pbs.twimg.com/profile_images/666431768661065728/Pp8deuJS_400x400.jpg"/> */
 /*

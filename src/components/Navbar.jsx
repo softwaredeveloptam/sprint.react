@@ -12,6 +12,7 @@ export default function Navbar(prop) {
       <h1
         className="navbar-header"
         //dont change this, it's working
+        //ok
         onClick={prop.changeState}
       >
         Header
